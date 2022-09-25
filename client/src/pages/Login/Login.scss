@@ -1,18 +1,7 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    color: #1c1e21;
-    line-height: 1.34;
-    font-size: 12px;
-    direction: ltr;
-}
+@use "../../scss/" as *;
 
 .login {
-    background-color: #F0F2F5;
+    background-color: $body-bg;
     /* height: 100vh; */
     display: flex;
     flex-direction: column;
@@ -30,13 +19,13 @@ body {
 .login__container {
     display: flex;
     flex-direction: column;
-    border: 1px solid #dddfe2;
+    border: 1px solid $border-color;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
     /* height: 312px; */
     margin: auto;
     width: 396px;
-    background-color: #fff;
+    background-color: $white;
     text-align: center;
 }
 
@@ -49,15 +38,14 @@ body {
 }
 
 .login__container > form > .center > input {
-    height: 52px;
     margin-bottom: 10px;
-    background-color: white;
-    width: 364px;
-    border: 0.5px solid #dddfe2;
+    background-color: $white;
+    width: 330px;
+    border: 0.5px solid $border-color;
     border-radius: 5px;
     outline: none;
     padding: 14px 16px;
-    border: 1px solid #dddfe2;
+    border: 1px solid $border-color;
     color: #1d2129;
     line-height: 16px;
     font-size: 17px;
@@ -81,7 +69,7 @@ input::placeholder {
     vertical-align: middle;
     font-weight: bold;
     justify-content: center;
-    background-color: #1877f2;
+    background-color: $facebook-blue;
     border: none;
     border-radius: 6px;
     font-size: 20px;
@@ -93,7 +81,7 @@ input::placeholder {
 }
 
 .login__submit:hover {
-    background-color: #166FE5;
+    background-color: $facebook-blue-dark;
 }
 
 .center {
@@ -109,25 +97,22 @@ input::placeholder {
     align-items: center;
     /* padding: 12px 0 18px; */
     font-size: 14px;
-    padding: 25px;
 }
 
 .sideinfo > h5 {
-    color: #1877f3;
+    color: $facebook-blue;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 500;
     cursor: pointer;
     font-size: 14px;
-
 }
 
 .rtd {
-    color: #1877f2 !important;
+    color: $facebook-blue !important;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 500;
     cursor: pointer;
     font-size: 14px;
-
 }
 
 .sideinfo Link,

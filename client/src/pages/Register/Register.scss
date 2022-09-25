@@ -1,0 +1,225 @@
+@use "../../scss/" as *;
+
+.register {
+    background-color: $body-bg;
+}
+
+.logo {
+    padding-top: 5px;
+    text-align: center;
+}
+
+.logo > img {
+    height: 100px;
+}
+
+.register_container {
+    padding-top: 5px;
+}
+
+.sector {
+    margin: 0 auto 30px auto;
+    padding: 0 20px 0 0;
+    width: 400px;
+}
+
+.first__block {
+    background-color: $white;
+    border-radius: 8px 8px 0 0;
+    box-sizing: border-box;
+    padding: 10px 16px;
+    position: relative;
+    width: 432px;
+    z-index: 1;
+}
+
+.block_header {
+    font-size: 25px;
+    line-height: 32px;
+    text-align: center;
+    color: #1c1e21;
+    font-weight: 600;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-bottom: 0;
+}
+
+.block_p {
+    margin-bottom: 0;
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center;
+    color: #606770;
+}
+
+.second__sector {
+    margin: 0 auto 0 auto;
+    padding-bottom: 30px;
+}
+
+.second__block {
+    background-color: $white;
+    border-radius: 0 0 8px 8px;
+    border-top: 1px solid $border-color;
+    box-sizing: border-box;
+    padding: 16px;
+    position: relative;
+    width: 432px;
+}
+
+.second__block::before {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    background: transparent;
+    border-radius: 8px;
+    bottom: 0;
+    left: 0;
+    content: ""; 
+    position: absolute;   
+    right: 0;
+    top: -77px;
+    width: 432px;
+    z-index: 0;
+}
+
+.reg {
+    margin: 0;
+    padding: 0;
+}
+
+.names {
+    width: 399px;
+}
+
+.first {
+    float: left;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.rel {
+    position: relative;
+}
+
+.first__name {
+    width: 194px;
+    background: $white;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+}
+
+.first__placeholder {
+    color: #8d949e;
+    font-size: 15px;
+    line-height: 16px;
+    padding: 12px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    cursor: text;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.first__input {
+    width: 170px;
+    padding: 11px;
+    font-size: 15px;
+    line-height: 16px;
+    border-color: #ccd0d5;
+    border-radius: 5px;
+    margin: 0;
+    background-color: transparent;
+    position: relative;
+    border: 1px solid #ccd0d5;
+}
+
+.second {
+    float: right;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.last__name{
+    width: 194px;
+    background: $white;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+}
+
+.last__placeholder {
+    color: #8d949e;
+    font-size: 15px;
+    line-height: 16px;
+    padding: 12px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    cursor: text;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.last__input {
+    width: 170px;
+    padding: 11px;
+    font-size: 15px;
+    line-height: 16px;
+    border-color: #ccd0d5;
+    border-radius: 5px;
+    margin: 0;
+    background-color: transparent;
+    position: relative;
+    border: 1px solid #ccd0d5;
+}
+
+.third{
+    margin-bottom: 10px;
+    display: inline-block;
+    position: relative;
+}
+
+.email__phone {
+    width: 399px;
+    background: white;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+}
+
+.email__placeholder {
+    font-size: 15px;
+    line-height: 16px;
+    padding: 12px;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.email__input {
+    width: 375px;
+    padding: 11px;
+    font-size: 15px;
+    line-height: 16px;
+    border-radius: 5px;
+    border-color: #ccd0d5;
+    margin: 0;
+    background-color: transparent;
+    position: relative;
+    border: 1px solid #ccd0d5;
+}
