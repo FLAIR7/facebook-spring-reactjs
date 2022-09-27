@@ -52,6 +52,14 @@
     vertical-align: middle;
 }
 
+.error {
+    color: #f02849;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 8px;
+    text-align: center;
+}
+
 input::placeholder {
     color: gray;
     font-size: 17px;

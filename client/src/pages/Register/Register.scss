@@ -139,6 +139,21 @@
     border: 1px solid #ccd0d5;
 }
 
+.red_sign {
+    display: inline;
+    left: auto;
+    right: 9px;
+    top: 10px;
+    transform: scale(.76);
+    background-position: 0 0;
+    position: absolute;
+    background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/y4/r/EV7ny501e-i.png");
+    background-size: auto;
+    background-repeat: no-repeat;
+    height: 21px;
+    width: 21px;
+}
+
 .second {
     float: right;
     margin-bottom: 10px;
@@ -467,4 +482,99 @@
     cursor: pointer;
     text-decoration: none;
     text-align: center;
+}
+
+.first_error {
+    width: 489px;
+    right: 877px;
+    top: 207px;
+    opacity: 1;
+    height: 0;
+    position: absolute;
+    z-index: 202;
+    outline: none;
+}
+
+.first_error_block {
+    right: 0px;
+    position: absolute;
+    font-family: inherit;
+}
+
+.error_first_name {
+    padding-right: 18px;
+    padding-bottom: 18px;
+}
+
+.error_first_msg {
+    top: 0px;
+    background-color: #be4b49;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35);
+    color: #fff;
+    position: relative;
+    font-size: 13px;
+    max-width: 300px;
+    padding: 13px;
+}
+
+.error_first_arrow {
+    top: 0%;
+    margin-top: 12px;
+    background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/ys/r/Dh12pRWgFpd.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 0 -36px;
+    height: 22px;
+    right: 7px;
+    width: 11px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.second_error {
+    width: 672px;
+    left: 694px;
+    top: 251px;
+    opacity: 1;
+    height: 0;
+    position: absolute;
+    z-index: 202;
+    outline: none;
+}
+
+.second_error_block {
+    position: absolute;
+}
+
+.error_last_name {
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.error_last_msg {
+    background-color: #be4b49;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35);
+    color: $white;
+    position: relative;
+    font-size: 13px;
+    max-width: 300px;
+    padding: 13px;
+}
+
+.error_last_arrow {
+    left: 0%;
+    margin-left: 12px;
+    background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/ys/r/Dh12pRWgFpd.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 0 -59px;
+    height: 11px;
+    top: 7px;
+    width: 22px;
+    overflow: hidden;
+    position: absolute;
 }

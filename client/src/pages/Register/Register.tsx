@@ -1,7 +1,20 @@
+import { stringLiteral } from "@babel/types";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Register.scss";
 
+interface FormValues {
+    firstName: string,
+    lastName: string,
+}
+
 export function Register(){
+    const [firstName, setFirstName] = useState<string>("");
+    const [lastName, setLastName] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [error, setError] = useState<boolean>(false);
+
     return (
         <div className="register">
             <div>
@@ -17,7 +30,11 @@ export function Register(){
                         <div>
                             <div className="second__sector">
                                 <div className="second__block">
-                                    <form className="reg">
+                                    <form className="reg" onSubmit={(event) => {
+                                        event.preventDefault();
+
+                                        alert('Olha o console');
+                                    }}>
                                         <div>
                                             <div>
                                                 <div className="names">
@@ -25,17 +42,18 @@ export function Register(){
                                                         <div className="rel">
                                                             <div className="first__name">
                                                                 <div className="first__placeholder"></div>
-                                                                <input className="first__input" placeholder="First Name"></input>
+                                                                <input name="userFirstName" className="first__input" placeholder="First Name"></input>
                                                             </div>
-                                                            {/* <i className="red_sign"></i> */}
+                                                            {error && <i className="red_sign"></i>}
                                                         </div>
                                                     </div>
                                                     <div className="second">
                                                         <div className="rel">
                                                             <div className="last__name">
                                                                 <div className="last__placeholder"></div>
-                                                                <input className="last__input" placeholder="Last Name"></input>
+                                                                <input name="userLastName" className="last__input" placeholder="Last Name"></input>
                                                             </div>
+                                                            {error && <i className="red_sign"></i>}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -43,8 +61,9 @@ export function Register(){
                                                     <div className="rel">
                                                         <div className="email__phone">
                                                             <div className="email__placeholder"></div>
-                                                            <input className="email__input" placeholder="Mobile number or email"></input>
+                                                            <input type="email" className="email__input" placeholder="Mobile number or email"></input>
                                                         </div>
+                                                        {/* <i className="red_sign"></i> */}
                                                     </div>
                                                 </div>
                                                 <div className="forth">
@@ -53,6 +72,7 @@ export function Register(){
                                                             <div className="password__placeholder"></div>
                                                             <input className="password__input" placeholder="New password"></input>
                                                         </div>
+                                                        {/* <i className="red_sign"></i> */}
                                                     </div>
                                                 </div>
                                                 <div className="birthday_wrapper">
@@ -159,7 +179,7 @@ export function Register(){
                                                         People who use our service may have uploaded your contact 
                                                         information to Facebook. 
                                                         <a href="https://google.com" className="terms_links" 
-                                                        target="_blank">Learn more</a>
+                                                        target="_blank"> Learn more</a>
                                                         .
                                                     </p>
                                                 </div>
@@ -167,13 +187,13 @@ export function Register(){
                                                     <p className="terms_text">
                                                         By clicking Sign Up, you agree to our 
                                                         <Link to="https://google.com" className="terms_links" 
-                                                        >Terms</Link>
+                                                        > Terms</Link>
                                                         ,  
                                                         <Link to="/" className="terms_links"
-                                                        >Privacy Policy</Link>
+                                                        > Privacy Policy </Link>
                                                         and  
                                                         <Link to="/" className="terms_links"
-                                                        >Cookies Policy</Link>
+                                                        > Cookies Policy</Link>
                                                         . You may receive SMS Notifications from us and can opt out 
                                                         any time.
                                                     </p>
@@ -192,6 +212,22 @@ export function Register(){
                         </div>
                     </div>
                 </div>
+                {/* <div className="first_error">
+                    <div className="first_error_block">
+                        <div className="error_first_name">
+                            <div className="error_first_msg">What's your name?</div>
+                            <i className="error_first_arrow"></i>
+                        </div>
+                    </div>
+                </div> */}
+                {/* <div className="second_error">
+                    <div className="second_error_block">
+                        <div className="error_last_name">
+                            <div className="error_last_msg">What's your name?</div>
+                            <i className="error_last_arrow"></i>
+                        </div>
+                    </div>
+                </div> */}
             </div>
         </div>
     );

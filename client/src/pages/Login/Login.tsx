@@ -1,8 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "react-router-dom";
 import "./Login.scss";
 
 export function Login() {
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+
     return (
         <div className="login">
             <div>
