@@ -1,25 +1,47 @@
 import { stringLiteral } from "@babel/types";
+import { Formik, FormikProps, Form, getIn, FormikErrors, ErrorMessage } from "formik";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import * as Yup from "yup";
 import "./Register.scss";
 
 interface FormValues {
     firstName: string,
     lastName: string,
+    email: string,
+    password: string
 }
 
+const validate = Yup.object().shape({
+    firstName: Yup.string()
+    .required('Required'),
+
+    lastName: Yup.string()
+    .required('Required'),
+
+    email: Yup.string()
+    .required('Required'),
+
+    password: Yup.string()
+    .required('Required')
+});
+
 export function Register(){
-    const [firstName, setFirstName] = useState<string>("");
-    const [lastName, setLastName] = useState<string>("");
-    const [email, setEmail] = useState<string>("");
-    const [password, setPassword] = useState<string>("");
     const [error, setError] = useState<boolean>(false);
+    
+    function getStyles(errors: any, fieldName: any) {
+        if(getIn(errors, fieldName)) {
+            return {
+                border: '1px solid red'
+            }
+        }
+    }
 
     return (
         <div className="register">
             <div>
                 <div className="logo">
-                    <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" className="register__logo"/>
+                    <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" className="register__logo" alt="logo"/>
                 </div>
                 <div className="register_container">
                     <div className="sector">
@@ -30,11 +52,20 @@ export function Register(){
                         <div>
                             <div className="second__sector">
                                 <div className="second__block">
-                                    <form className="reg" onSubmit={(event) => {
-                                        event.preventDefault();
-
-                                        alert('Olha o console');
-                                    }}>
+                                <Formik<FormValues>
+                                initialValues={{
+                                    firstName: "",
+                                    lastName: "",
+                                    email: "",
+                                    password: "",
+                                    
+                                }}
+                                onSubmit={(values) => {
+                                    alert(JSON.stringify(values));
+                                    
+                                }} validationSchema={validate}>
+                                    { ({handleSubmit, values, handleChange, touched, errors, handleBlur}) => (
+                                    <form className="reg" onSubmit={handleSubmit}>
                                         <div>
                                             <div>
                                                 <div className="names">
@@ -42,18 +73,22 @@ export function Register(){
                                                         <div className="rel">
                                                             <div className="first__name">
                                                                 <div className="first__placeholder"></div>
-                                                                <input name="userFirstName" className="first__input" placeholder="First Name"></input>
+                                                                <input type="text" name="firstName" className="first__input" placeholder="First Name"
+                                                                    value={values.firstName} onChange={handleChange} onBlur={handleBlur} style={getStyles(errors, 'firstName')}
+                                                                />
                                                             </div>
-                                                            {error && <i className="red_sign"></i>}
+                                                            {touched.firstName && errors.firstName && <i className="red_sign"></i>}
                                                         </div>
                                                     </div>
                                                     <div className="second">
                                                         <div className="rel">
                                                             <div className="last__name">
                                                                 <div className="last__placeholder"></div>
-                                                                <input name="userLastName" className="last__input" placeholder="Last Name"></input>
+                                                                <input type="text" name="lastName" className="last__input" placeholder="Last Name"
+                                                                    value={values.lastName} onChange={handleChange} onBlur={handleBlur} style={getStyles(errors, 'lastName')}
+                                                                />
                                                             </div>
-                                                            {error && <i className="red_sign"></i>}
+                                                            {touched.lastName && errors.lastName && <i className="red_sign"></i>}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -61,18 +96,22 @@ export function Register(){
                                                     <div className="rel">
                                                         <div className="email__phone">
                                                             <div className="email__placeholder"></div>
-                                                            <input type="email" className="email__input" placeholder="Mobile number or email"></input>
+                                                            <input name="email" type="email" className="email__input" placeholder="Mobile number or email"
+                                                                value={values.email} onChange={handleChange} onBlur={handleBlur} style={getStyles(errors, 'email')}
+                                                            />
                                                         </div>
-                                                        {/* <i className="red_sign"></i> */}
+                                                        {touched.email &&  errors.email && <i className="red_sign"></i>}
                                                     </div>
                                                 </div>
                                                 <div className="forth">
                                                     <div className="rel">
                                                         <div className="password">
                                                             <div className="password__placeholder"></div>
-                                                            <input className="password__input" placeholder="New password"></input>
+                                                            <input name="password" type="password" className="password__input" placeholder="New password"
+                                                                value={values.password} onChange={handleChange} onBlur={handleBlur} style={getStyles(errors, 'password')}
+                                                            />
                                                         </div>
-                                                        {/* <i className="red_sign"></i> */}
+                                                        {touched.password && errors.password && <i className="red_sign"></i>}
                                                     </div>
                                                 </div>
                                                 <div className="birthday_wrapper">
@@ -178,8 +217,8 @@ export function Register(){
                                                     <p className="terms_text">
                                                         People who use our service may have uploaded your contact 
                                                         information to Facebook. 
-                                                        <a href="https://google.com" className="terms_links" 
-                                                        target="_blank"> Learn more</a>
+                                                        <Link to="https://google.com" className="terms_links" 
+                                                        > Learn more</Link>
                                                         .
                                                     </p>
                                                 </div>
@@ -199,35 +238,37 @@ export function Register(){
                                                     </p>
                                                 </div>
                                                 <div className="reg_area">
-                                                    <button className="reg_button">Sign Up</button>
+                                                    <button type="submit" className="reg_button">Sign Up</button>
                                                 </div>
                                                 <div className="login_area">
                                                     <Link to="/" className="login_link">Already have an account?</Link>
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
+                                    </form> 
+                                    )}
+                                    </Formik>
                                 </div>
                             </div>   
                         </div>
                     </div>
                 </div>
-                {/* <div className="first_error">
+                {error && <div className="first_error">
                     <div className="first_error_block">
                         <div className="error_first_name">
                             <div className="error_first_msg">What's your name?</div>
                             <i className="error_first_arrow"></i>
                         </div>
                     </div>
-                </div> */}
-                {/* <div className="second_error">
+                </div>}
+                {error && <div className="second_error">
                     <div className="second_error_block">
                         <div className="error_last_name">
                             <div className="error_last_msg">What's your name?</div>
                             <i className="error_last_arrow"></i>
                         </div>
                     </div>
-                </div> */}
+                </div>}
             </div>
         </div>
     );
