@@ -1,9 +1,8 @@
-import { stringLiteral } from "@babel/types";
+import "./register.scss";
 import { Formik, FormikProps, Form, getIn, FormikErrors, ErrorMessage } from "formik";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
-import "./Register.scss";
 
 interface FormValues {
     firstName: string,
@@ -20,21 +19,26 @@ const validate = Yup.object().shape({
     .required('Required'),
 
     email: Yup.string()
-    .required('Required'),
+    .required('Required')
+    .email(),
 
     password: Yup.string()
     .required('Required')
 });
 
-export function Register(){
+export default function Register(){
     const [error, setError] = useState<boolean>(false);
-    
-    function getStyles(errors: any, fieldName: any) {
-        if(getIn(errors, fieldName)) {
+
+    function getStyles(errors: any, fieldName: any, touched: any) {
+        if(!touched) {
+            return {
+                border: '1px solid #ccd0d5'
+            }
+        } else if(getIn(errors, fieldName) && touched){
             return {
                 border: '1px solid red'
             }
-        }
+        } 
     }
 
     return (
@@ -74,7 +78,7 @@ export function Register(){
                                                             <div className="first__name">
                                                                 <div className="first__placeholder"></div>
                                                                 <input type="text" name="firstName" className="first__input" placeholder="First Name"
-                                                                    value={values.firstName} onChange={handleChange} onBlur={handleBlur} style={getStyles(errors, 'firstName')}
+                                                                    value={values.firstName} onChange={handleChange} onBlur={handleBlur} style={getStyles(errors, 'firstName', touched.firstName)}
                                                                 />
                                                             </div>
                                                             {touched.firstName && errors.firstName && <i className="red_sign"></i>}
@@ -85,7 +89,7 @@ export function Register(){
                                                             <div className="last__name">
                                                                 <div className="last__placeholder"></div>
                                                                 <input type="text" name="lastName" className="last__input" placeholder="Last Name"
-                                                                    value={values.lastName} onChange={handleChange} onBlur={handleBlur} style={getStyles(errors, 'lastName')}
+                                                                    value={values.lastName} onChange={handleChange} onBlur={handleBlur} style={getStyles(errors, 'lastName', touched.lastName)}
                                                                 />
                                                             </div>
                                                             {touched.lastName && errors.lastName && <i className="red_sign"></i>}
@@ -97,7 +101,7 @@ export function Register(){
                                                         <div className="email__phone">
                                                             <div className="email__placeholder"></div>
                                                             <input name="email" type="email" className="email__input" placeholder="Mobile number or email"
-                                                                value={values.email} onChange={handleChange} onBlur={handleBlur} style={getStyles(errors, 'email')}
+                                                                value={values.email} onChange={handleChange} onBlur={handleBlur} style={getStyles(errors, 'email', touched.email)}
                                                             />
                                                         </div>
                                                         {touched.email &&  errors.email && <i className="red_sign"></i>}
@@ -108,7 +112,7 @@ export function Register(){
                                                         <div className="password">
                                                             <div className="password__placeholder"></div>
                                                             <input name="password" type="password" className="password__input" placeholder="New password"
-                                                                value={values.password} onChange={handleChange} onBlur={handleBlur} style={getStyles(errors, 'password')}
+                                                                value={values.password} onChange={handleChange} onBlur={handleBlur} style={getStyles(errors, 'password', touched.password)}
                                                             />
                                                         </div>
                                                         {touched.password && errors.password && <i className="red_sign"></i>}
