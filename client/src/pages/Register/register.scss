@@ -258,7 +258,7 @@
 .password {
     display: inline-block;
     position: relative;
-    background: white;
+    background: $white;
     border-radius: 5px;
     width: 399px;
 }
@@ -322,7 +322,7 @@
     height: 36px;
     line-height: 20px;
     width: 125px;
-    background-color: #fff;
+    background-color: $white;
     border: 1px solid #ccd0d5;
     padding: 0 8px;
 }
@@ -335,7 +335,7 @@
     height: 36px;
     line-height: 20px;
     width: 125px;
-    background-color: #fff;
+    background-color: $white;
     border: 1px solid #ccd0d5;
     padding: 0 8px;
     margin-left: 12px;
@@ -377,7 +377,7 @@
 }
 
 .gender_choice {
-    background-color: #fff;
+    background-color: $white;
     border: 1px solid #ccd0d5;
     box-sizing: border-box;
     display: inline-block;
