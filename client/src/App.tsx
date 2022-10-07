@@ -4,6 +4,7 @@ import { Routes, Route} from "react-router-dom";
 import "./App.scss";
 import Home from './pages/Home/Home';
 import Register from './pages/Register/Register';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
