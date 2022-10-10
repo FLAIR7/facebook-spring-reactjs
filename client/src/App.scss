@@ -4,6 +4,10 @@
     outline: 0;
 }
 
+html {
+    overflow-y: scroll !important;
+}
+
 body {
     font-family: Helvetica, Arial, sans-serif;
     color: #1c1e21;
@@ -28,4 +32,12 @@ ul {
 a {
     color: #385898;
     cursor: pointer;
+    text-decoration: none;
+}
+
+label {
+    color: #606770;
+    cursor: default;
+    font-weight: 600;
+    vertical-align: middle;
 }
