@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom";
-import "./Login.scss";
+import { Link } from "react-router-dom"
+import "./Login.scss"
 
-export function Login() {
+export default function Login() {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 
@@ -29,9 +29,9 @@ export function Login() {
                         <div className="sideinfo">
                             <h5>Forgot account?</h5>
                             <span className="dot">.</span>
-                            <Link to="/reg" style={{textDecoration: "none"}}>
+                            <a href="/reg" style={{textDecoration: "none"}}>
                                 <h5 className="rtd">Sign up for Facebook</h5>
-                            </Link>     
+                            </a>     
                         </div>
                     </div>
                 </form>

@@ -221,22 +221,22 @@ export default function Register(){
                                                     <p className="terms_text">
                                                         People who use our service may have uploaded your contact 
                                                         information to Facebook. 
-                                                        <Link to="https://google.com" className="terms_links" 
-                                                        > Learn more</Link>
+                                                        <a href="https://google.com" className="terms_links" 
+                                                        > Learn more</a>
                                                         .
                                                     </p>
                                                 </div>
                                                 <div className="terms">
                                                     <p className="terms_text">
                                                         By clicking Sign Up, you agree to our 
-                                                        <Link to="https://google.com" className="terms_links" 
-                                                        > Terms</Link>
+                                                        <a href="https://google.com" className="terms_links" 
+                                                        > Terms</a>
                                                         ,  
-                                                        <Link to="/" className="terms_links"
-                                                        > Privacy Policy </Link>
+                                                        <a href="/" className="terms_links"
+                                                        > Privacy Policy </a>
                                                         and  
-                                                        <Link to="/" className="terms_links"
-                                                        > Cookies Policy</Link>
+                                                        <a href="/" className="terms_links"
+                                                        > Cookies Policy</a>
                                                         . You may receive SMS Notifications from us and can opt out 
                                                         any time.
                                                     </p>
@@ -245,7 +245,7 @@ export default function Register(){
                                                     <button type="submit" className="reg_button">Sign Up</button>
                                                 </div>
                                                 <div className="login_area">
-                                                    <Link to="/" className="login_link">Already have an account?</Link>
+                                                    <a href="/" className="login_link">Already have an account?</a>
                                                 </div>
                                             </div>
                                         </div>
