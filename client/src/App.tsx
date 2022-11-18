@@ -14,10 +14,20 @@ function App() {
         <Route path="/" element={<Login/>}></Route>
         <Route path="/reg" element={<Register/>}></Route>
         <Route path="*" element={<NotFound/>}></Route>
-        <Route path="/home" element={<Home/>}></Route>
+        {/*<Route path="/home" element={<Home/>}></Route>*/}
+        <Route path="/home" element={<AAA/>}></Route>
     </Routes>
     </>
   );
+}
+
+function AAA(){
+  return (
+    <div className="navbar__rel">
+      <Navbar/>
+      <Home/>
+    </div>
+  )
 }
 
 export default App;

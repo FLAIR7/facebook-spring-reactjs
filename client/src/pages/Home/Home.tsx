@@ -5,7 +5,7 @@ import "./home.scss";
 export default function Home(){
     return (
         <>
-        <Navbar/>
+            {/*<Navbar/>*/}
             <div className="home">
                 <div className="home__flex">
                     <div className="home__flex--container">
@@ -139,6 +139,11 @@ export default function Home(){
                                             <div className="home__middleside--sector">
                                                 <div className="home__middleside--block">
                                                     <div className="home__middleside--container">
+                                                        <div className="home__middleside--sticky">
+                                                            <div>
+                                                                <a href="/"></a>
+                                                            </div>
+                                                        </div>
                                                         <div>
                                                             <div className="home__middleside--flexcontainer">
                                                                 <div className="home__middleside--relative">
@@ -194,7 +199,16 @@ export default function Home(){
                                                                                                         <div className="home__middle--usercontainer">
                                                                                                             <div className="relative">
                                                                                                                 <a className="home__middle--link" href="google.com">
-
+                                                                                                                    <div className="home__middle--profilepic">
+                                                                                                                        <div className="home__middle--absolute">
+                                                                                                                            <div className="home__middle--picflex">
+                                                                                                                                <div className="home__middle--piccontainer">
+                                                                                                                                    <img src="https://scontent-gru1-2.xx.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?stp=dst-png_p160x160&_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=5JffEiPApLYAX9IvPAm&_nc_ht=scontent-gru1-2.xx&oh=00_AfBDgQV7qOaeNBZSHDMO9XexKbGIQ3DwkrWtNtcC71Mxzw&oe=639465B8"></img>
+                                                                                                                                </div>
+                                                                                                                                <div className="home__middle--img"></div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
                                                                                                                 </a>
                                                                                                             </div>
                                                                                                         </div>

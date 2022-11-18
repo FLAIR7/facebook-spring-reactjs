@@ -1,5 +1,11 @@
 @use "../../scss/" as *;
 
+.navbar__rel {
+    z-index: 0;
+    position: relative;
+    box-sizing: border-box;
+}
+
 .navbar {
     position: fixed;
     left: 0;
@@ -10,6 +16,97 @@
     margin-left: 16px;
     z-index: 3;
     height: $header-height;
+}
+
+.navbar__leftside--corner {
+    opacity: 0;
+    position: absolute;
+    left: -48px;
+    transform: translateX(0) translateZ(0);
+    transition-duration: 200ms;
+}
+
+.navbar__leftside--corner2 {
+    justify-content: center;
+    padding-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    position: relative;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    cursor: not-allowed;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    touch-action: manipulation;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    height: 40px;
+    width: 40px;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    background-color: #e4e6eb;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+
+    i {
+        display: inline-block;
+        background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/aTaMUmXjaVp.png');
+        background-position: -146px -59px;
+        background-size: auto;
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        display: inline-block;
+        filter: invert(80%) sepia(6%) saturate(200%) saturate(120%) hue-rotate(173deg) brightness(98%) contrast(89%);
+        text-align: inherit;
+    }
+
+    div {
+        opacity: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        transition-duration: 100ms;
+        text-align: inherit;
+        list-style: none;
+    }
+
+}
+
+.navbar__logo--link {
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    min-width: 0;
+    min-height: 0;
+    flex-basis: auto;
+    box-sizing: border-box;
+    padding-right: 0;
+    flex-shrink: 0;
+    align-items: stretch;
+    flex-direction: row;
+    z-index: 0;
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    margin: 0;
+    text-align: inherit;
 }
 
 .navbar__leftside {
@@ -407,6 +504,7 @@
     circle {
         stroke-width: 2;
         fill: none;
+        stroke: rgba(0, 0, 0, 0.1);
     }
 }
 
